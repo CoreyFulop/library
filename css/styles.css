@@ -19,14 +19,47 @@ header {
 }
 
 main {
+    padding: 10px;
+    gap: 10px;
     flex: 1, 0, auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 main .book-card {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    grid-template-areas: 
+        "title title"
+        "author author"
+        "pages read"    
+        ;
+}
+
+.book-card .title-container {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+}
+
+.book-card .author-container {
+    grid-area: author;
+    justify-self: center;
+    align-self: center;
+}
+
+.book-card .pages-container {
+    grid-area: pages;
+    justify-self: center;
+    align-self: center;
+}
+
+.book-card .read-container {
+    grid-area: read;
+    justify-self: center;
+    align-self: center;
 }
 
 footer {
