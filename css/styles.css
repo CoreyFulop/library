@@ -19,6 +19,16 @@ body {
 
 header {
     height: 104px;
+    padding: 0px 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+header .branding-container {
+    color: rgb(204, 204, 204);
+    font-size: 4rem;    
 }
 
 main {
