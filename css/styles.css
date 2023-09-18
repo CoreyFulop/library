@@ -55,6 +55,28 @@ header button#showNewBookDialog:hover {
     
 }
 
+dialog#newBookDialog {
+    height: 50vh;
+    width: 50vw;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    max-width: 100%
+}
+
+dialog#newBookDialog::backdrop {
+    background-color: rgba(30, 41, 59, 0.7);
+}
+
 main {
     padding: 20px 50px;
     gap: 20px;
