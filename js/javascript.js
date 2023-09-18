@@ -59,6 +59,6 @@ function displayMyLibrary() {
 // Some test data
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
 const aBook = new Book("A Title", "An Author", 99, "Yes");
-const anotherBook = new Book("A SUPER REALLY LONG TITLE GOES HERE", "SOME STUPID AUTHORS NAME IS REALLY LONG", 99999, "Nope");
+const anotherBook = new Book("A SUPER REALLY LONG TITLE GOES HERE AAAAAAAAAAAAAAAAAAAAAAAAA", "SOME STUPID AUTHORS NAME IS REALLY LONG", 99999, "Nope");
 const myLibrary = [theHobbit, aBook, anotherBook];
 displayMyLibrary();
