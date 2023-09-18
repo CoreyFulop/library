@@ -1,6 +1,6 @@
 "use strict";
 
-const myLibrary = [];
+// const myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -9,11 +9,14 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+// Some test data
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
+const aBook = new Book("A Title", "An Author", 99, "Yes");
+const myLibrary = [theHobbit, aBook];
+
 Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 }
-
-const bookCardContainer = document.querySelector(".card-container");
 
 function addBookToLibrary() {
     let newTitle = prompt("Enter new book title:");
@@ -24,3 +27,28 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
 }
 
+const bookCardContainer = document.querySelector(".card-container");
+
+function displayMyLibrary() {
+    for (let book of myLibrary) {
+        let bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
+        bookCardContainer.appendChild(bookCard);
+        let titleContainer = document.createElement("div");
+        titleContainer.classList.add("title-container");
+        titleContainer.textContent = book.title;
+        bookCard.appendChild(titleContainer);
+        let authorContainer = document.createElement("div");
+        authorContainer.classList.add("author-container");
+        authorContainer.textContent = book.author;
+        bookCard.appendChild(authorContainer);
+        let pagesContainer = document.createElement("div");
+        pagesContainer.classList.add("pages-container");
+        pagesContainer.textContent = book.pages;
+        bookCard.appendChild(pagesContainer);
+        let readContainer = document.createElement("div");
+        readContainer.classList.add("read-container");
+        readContainer.textContent = book.read;
+        bookCard.appendChild(readContainer);
+    }
+}

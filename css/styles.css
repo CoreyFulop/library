@@ -24,6 +24,11 @@ main {
     flex-wrap: wrap;
 }
 
+main .book-card {
+    height: 100px;
+    width: 100px;
+}
+
 footer {
     margin-top: auto;
 }
