@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-size: 100%;
 }
 
 *,
@@ -12,6 +13,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(17, 24, 39);
 }
 
 header {
@@ -19,34 +22,53 @@ header {
 }
 
 main {
-    padding: 10px;
-    gap: 10px;
+    padding: 20px 50px;
+    gap: 20px;
     flex: 1, 0, auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 main .book-card {
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
+    background-color: rgba(30, 41, 59, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgb(229, 231, 235);
+    color: rgb(204, 204, 204);
+    font-size: 1.2rem;
     display: grid;
-    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
     grid-template-areas: 
-        "title title"
-        "author author"
-        "pages read"    
+        "title title title title"
+        "author author author author"
+        "pages-label pages read-label read"    
         ;
 }
 
 .book-card .title-container {
+    color: #CC99CD;
+    font-size: 2rem;
+    padding: 0px 10px;
+    overflow: hidden;
     grid-area: title;
     justify-self: center;
     align-self: center;
 }
 
 .book-card .author-container {
+    color: #F08D49;
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    overflow: hidden;
     grid-area: author;
     justify-self: center;
+    align-self: center;
+}
+
+.book-card .pages-label-container {
+    grid-area: pages-label;
+    justify-self: end;
     align-self: center;
 }
 
@@ -54,12 +76,20 @@ main .book-card {
     grid-area: pages;
     justify-self: center;
     align-self: center;
+    overflow: hidden;
+}
+
+.book-card .read-label-container {
+    grid-area: read-label;
+    justify-self: end;
+    align-self: center;
 }
 
 .book-card .read-container {
     grid-area: read;
     justify-self: center;
     align-self: center;
+    overflow: hidden;
 }
 
 footer {

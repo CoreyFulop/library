@@ -9,11 +9,6 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-// Some test data
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
-const aBook = new Book("A Title", "An Author", 99, "Yes");
-const myLibrary = [theHobbit, aBook];
-
 Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 }
@@ -42,13 +37,28 @@ function displayMyLibrary() {
         authorContainer.classList.add("author-container");
         authorContainer.textContent = book.author;
         bookCard.appendChild(authorContainer);
+        let pagesLabelContainer = document.createElement("div");
+        pagesLabelContainer.classList.add("pages-label-container");
+        pagesLabelContainer.textContent = "Pages:";
+        bookCard.appendChild(pagesLabelContainer);
         let pagesContainer = document.createElement("div");
         pagesContainer.classList.add("pages-container");
         pagesContainer.textContent = book.pages;
         bookCard.appendChild(pagesContainer);
+        let readLabelContainer = document.createElement("div");
+        readLabelContainer.classList.add("read-label-container");
+        readLabelContainer.textContent = "Read:";
+        bookCard.appendChild(readLabelContainer);
         let readContainer = document.createElement("div");
         readContainer.classList.add("read-container");
         readContainer.textContent = book.read;
         bookCard.appendChild(readContainer);
     }
 }
+
+// Some test data
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
+const aBook = new Book("A Title", "An Author", 99, "Yes");
+const anotherBook = new Book("A SUPER REALLY LONG TITLE GOES HERE", "SOME STUPID AUTHORS NAME IS REALLY LONG", 99999, "Nope");
+const myLibrary = [theHobbit, aBook, anotherBook];
+displayMyLibrary();
