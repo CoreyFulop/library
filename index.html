@@ -13,7 +13,40 @@
     <body>
         <header>
             <div class="branding-container">Library</div>
-            <div></div>
+            <div>
+                <dialog id="newBookDialog">
+                    <form action="" method="">
+                        <div>
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" name="title" placeholder="The Hobbit">
+                        </div>
+                        <div>
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" name="author" placeholder="J.R.R. Tolkein">
+                        </div>
+                        <div>
+                            <label for="pages">Pages:</label>
+                            <input type="number" id="pages" name="pages" step="1" min="1">
+                        </div>
+                        <fieldset>
+                            <legend>Has been read:</legend>
+                            <div>
+                                <input type="radio" id="no" name="read" value="no" checked>
+                                <label for="no">No</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="yes" name="read" value="yes">
+                                <label for="yes">Yes</label>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <button value="cancel" formmethod="dialog">Cancel</button>
+                            <button id="createBtn" value="defualt">Create</button>
+                        </div> 
+                    </form>
+                </dialog>
+                <button id="showNewBookDialog">NEW BOOK</button>
+            </div>
         </header>
         <main class="card-container"></main>
         <footer></footer>

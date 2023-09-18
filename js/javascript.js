@@ -56,6 +56,28 @@ function displayMyLibrary() {
     }
 }
 
+const newBookButton = document.getElementById("showNewBookDialog");
+const newBookDialog = document.getElementById("newBookDialog");
+const createBtn = newBookDialog.querySelector("#createBtn");
+
+// "NEW BOOK" button opens the <dialog> modally
+newBookButton.addEventListener("click", () => {
+    newBookDialog.showModal();
+});
+
+// Prevent the "Create" button from the default behaviour of submitting the form
+createBtn.addEventListener("click", (event) => {
+    event.preventDefault(); // Do not submit form
+    let newTitle = document.getElementById("title").value;
+    let newAuthor = document.getElementById("author").value;
+    let newPages = document.getElementById("pages").value;
+    let newRead = document.querySelector("input[name='read']:checked").value;
+    let newBook = new Book(newTitle, newAuthor, newPages, newRead);
+    myLibrary.push(newBook);
+    displayMyLibrary();
+    newBookDialog.close();
+});
+
 // Some test data
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
 const aBook = new Book("A Title", "An Author", 99, "Yes");
