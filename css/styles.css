@@ -168,6 +168,7 @@ main .book-card {
     grid-area: pages;
     justify-self: center;
     align-self: center;
+    max-width: 100%;
     overflow: hidden;
 }
 

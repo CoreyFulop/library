@@ -1,6 +1,6 @@
 "use strict";
 
-// const myLibrary = [];
+const myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -63,6 +63,7 @@ function displayMyLibrary() {
 const newBookButton = document.getElementById("showNewBookDialog");
 const newBookDialog = document.getElementById("newBookDialog");
 const createBtn = newBookDialog.querySelector("#createBtn");
+const cancelBtn = newBookDialog.querySelector("#createBtn");
 
 // "NEW BOOK" button opens the <dialog> modally
 newBookButton.addEventListener("click", () => {
@@ -98,8 +99,6 @@ cancelBtn.addEventListener("click", () => {
 });
 
 // Some test data
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 99, "No");
-const aBook = new Book("A Title", "An Author", 99, "Yes");
-const anotherBook = new Book("A SUPER REALLY LONG TITLE GOES HERE AAAAAAAAAAAAAAAAAAAAAAAAA", "SOME STUPID AUTHORS NAME IS REALLY LONG", 99999, "Nope");
-const myLibrary = [theHobbit, aBook, anotherBook];
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 310, "No");
+myLibrary.push(theHobbit);
 displayMyLibrary();
