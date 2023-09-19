@@ -129,6 +129,6 @@ cancelBtn.addEventListener("click", (event) => {
     newBookDialog.close();
 });
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 310, "No");
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 310, "No");
 myLibrary.push(theHobbit);
 displayMyLibrary();
