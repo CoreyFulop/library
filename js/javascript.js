@@ -80,6 +80,21 @@ createBtn.addEventListener("click", (event) => {
     myLibrary.push(newBook);
     displayMyLibrary();
     newBookDialog.close();
+    let titleField = document.getElementById("title");
+    titleField.value = "";
+    let authorField = document.getElementById("author");
+    authorField.value = "";
+    let pagesField = document.getElementById("pages");
+    pagesField.value = "";
+});
+
+cancelBtn.addEventListener("click", () => {
+    let titleField = document.getElementById("title");
+    titleField.value = "";
+    let authorField = document.getElementById("author");
+    authorField.value = "";
+    let pagesField = document.getElementById("pages");
+    pagesField.value = "";
 });
 
 // Some test data
