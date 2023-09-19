@@ -13,6 +13,12 @@ Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 }
 
+function deleteBook(e) {
+    let deleteTarget = e.target.getAttribute("data-card");
+    myLibrary.splice(deleteTarget, 1);
+    displayMyLibrary();
+}
+
 const bookCardContainer = document.querySelector(".card-container");
 
 function displayMyLibrary() {
@@ -21,6 +27,12 @@ function displayMyLibrary() {
         let bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
         bookCardContainer.appendChild(bookCard);
+        let closeButton = document.createElement("button");
+        closeButton.classList.add("close-button");
+        closeButton.setAttribute("data-card", `${myLibrary.indexOf(book)}`);
+        closeButton.textContent = "Delete";
+        closeButton.addEventListener("click", deleteBook);
+        bookCard.appendChild(closeButton);
         let titleContainer = document.createElement("div");
         titleContainer.classList.add("title-container");
         titleContainer.textContent = book.title;
