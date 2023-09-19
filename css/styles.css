@@ -125,12 +125,13 @@ main .book-card {
     color: rgb(204, 204, 204);
     font-size: 1.2rem;
     display: grid;
-    grid-template: 0.5fr repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template: 0.5fr repeat(3, 1fr) 0.5fr / repeat(4, 1fr);
     grid-template-areas:
         ". . . close-button" 
         "title title title title"
         "author author author author"
-        "pages-label pages read-label read"    
+        "pages-label pages read-label read" 
+        ". . toggle-button toggle-button"   
         ;
 }
 
@@ -160,7 +161,7 @@ main .book-card {
 
 .book-card .pages-label-container {
     grid-area: pages-label;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
 }
 
@@ -174,7 +175,7 @@ main .book-card {
 
 .book-card .read-label-container {
     grid-area: read-label;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
 }
 
@@ -194,6 +195,15 @@ main .book-card {
     color: rgba(30, 41, 59, 0.7);
     background-color: rgb(204, 204, 204);
     font-size: 1.3rem;
+}
+
+.book-card .read-toggle-button {
+    grid-area: toggle-button;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    margin: 8px 30px;
+    color: rgba(30, 41, 59, 0.7);
+    background-color: rgb(204, 204, 204);
 }
 
 .book-card .close-button:active {

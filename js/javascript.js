@@ -13,6 +13,19 @@ Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 }
 
+Book.prototype.toggleRead = function () {
+    switch (this.read) {
+        case "Yes":
+            this.read = "No";
+            break;
+        case "No":
+            this.read = "Yes";
+            break;
+        default:
+            break;
+    }
+}
+
 function deleteBook(e) {
     let deleteTarget = e.target.getAttribute("data-card");
     myLibrary.splice(deleteTarget, 1);
@@ -57,7 +70,19 @@ function displayMyLibrary() {
         readContainer.classList.add("read-container");
         readContainer.textContent = book.read;
         bookCard.appendChild(readContainer);
+        let readToggleButton = document.createElement("button");
+        readToggleButton.textContent = "Toggle read";
+        readToggleButton.classList.add("read-toggle-button");
+        readToggleButton.setAttribute("data-card", `${myLibrary.indexOf(book)}`);
+        readToggleButton.addEventListener("click", toggleReadState);
+        bookCard.appendChild(readToggleButton);
     }
+}
+
+function toggleReadState(e) {
+    let toggleTarget = e.target.getAttribute("data-card");
+    myLibrary[toggleTarget].toggleRead();
+    displayMyLibrary();
 }
 
 const newBookButton = document.getElementById("showNewBookDialog");
@@ -98,7 +123,6 @@ cancelBtn.addEventListener("click", () => {
     pagesField.value = "";
 });
 
-// Some test data
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 310, "No");
 myLibrary.push(theHobbit);
 displayMyLibrary();
