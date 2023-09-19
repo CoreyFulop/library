@@ -112,15 +112,21 @@ createBtn.addEventListener("click", (event) => {
     authorField.value = "";
     let pagesField = document.getElementById("pages");
     pagesField.value = "";
+    let notReadRadioBtn = document.getElementById("no");
+    notReadRadioBtn.checked = true;
 });
 
-cancelBtn.addEventListener("click", () => {
+cancelBtn.addEventListener("click", (event) => {
+    event.preventDefault();
     let titleField = document.getElementById("title");
     titleField.value = "";
     let authorField = document.getElementById("author");
     authorField.value = "";
     let pagesField = document.getElementById("pages");
     pagesField.value = "";
+    let notReadRadioBtn = document.getElementById("no");
+    notReadRadioBtn.checked = true;
+    newBookDialog.close();
 });
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkein", 310, "No");
