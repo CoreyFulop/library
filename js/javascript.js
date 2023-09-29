@@ -2,27 +2,31 @@
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-Book.prototype.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-}
-
-Book.prototype.toggleRead = function () {
-    switch (this.read) {
-        case "Yes":
-            this.read = "No";
-            break;
-        case "No":
-            this.read = "Yes";
-            break;
-        default:
-            break;
+class Book {
+    title;
+    author;
+    pages;
+    read;
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+    }
+    toggleRead() {
+        switch (this.read) {
+            case "Yes":
+                this.read = "No";
+                break;
+            case "No":
+                this.read = "Yes";
+                break;
+            default:
+                break;
+        }
     }
 }
 
